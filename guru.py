@@ -86,10 +86,13 @@ def imprimir(palabras):
             print("Palabras de longitud {}: ".format(i))
             print(palabras[i])
 
-            
-            
-if __name__ == '__main__':
+
+def main():
     letras = raw_input('Letras que aparecen (incluye tildes): ')
     dic =  enchant.Dict("es_ES")
     palabras = buscar_palabras(letras, dic)
     imprimir(palabras)
+
+    
+if __name__ == "__main__":
+    main()
