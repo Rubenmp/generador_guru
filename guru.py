@@ -4,6 +4,7 @@
 """ Programa para completar el juego Palabras Gurú """
 
 import enchant
+from sets import Set
 
 
 def buscar_palabras(letras, diccionario, longitud=0):
@@ -14,6 +15,7 @@ def buscar_palabras(letras, diccionario, longitud=0):
             nuevas_palabras = buscar_palabras(letras, diccionario, i+1)
             palabras.append(nuevas_palabras)
         palabras[0] = []
+        eliminar_repetidas(palabras)
     else:
         palabras = []
         palabra  = [0]*longitud
@@ -23,7 +25,8 @@ def buscar_palabras(letras, diccionario, longitud=0):
                 palabras.append(palabra_original)
 
     return palabras
-        
+
+
 def siguiente_palabra(actual, num_letras):
     'Genera el árbol sin repetir letras'
     siguiente = actual
@@ -46,6 +49,7 @@ def siguiente_palabra(actual, num_letras):
     
     return siguiente
 
+
 def letra_repetida(palabra, num_letras):
     'Palabra será una lista de números que representarán una posición'
     rep = False
@@ -56,7 +60,9 @@ def letra_repetida(palabra, num_letras):
         else:
             rep = True
 
+
     return rep
+
 
 def palabra2string(palabra, letras):
     ret = ""
@@ -65,6 +71,15 @@ def palabra2string(palabra, letras):
 
     return ret
 
+
+def eliminar_repetidas(palabras):
+    for i in range(len(palabras)):
+        conjunto = Set()
+        for j in palabras[i]:
+            conjunto.add(j)
+        palabras[i] = list(conjunto)
+
+        
 def imprimir(palabras):
     for i in range(len(palabras)):
         if (i != 0):
@@ -78,4 +93,3 @@ if __name__ == '__main__':
     dic =  enchant.Dict("es_ES")
     palabras = buscar_palabras(letras, dic)
     imprimir(palabras)
-
