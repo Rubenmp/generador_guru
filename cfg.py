@@ -5,7 +5,7 @@ import os
 
 
 def main():
-    prin("Descargando diccionario español")
+    print("Descargando diccionario español")
     os.system('wget -O ./dic/es_ES.aff "https://raw.githubusercontent.com/sbosio/rla-es/master/source-code/hispalabras-0.1/hispalabras/es_ES.aff"')
     os.system('wget -O ./dic/es_ES.dic "https://raw.githubusercontent.com/sbosio/rla-es/master/source-code/hispalabras-0.1/hispalabras/es_ES.dic"')
 
