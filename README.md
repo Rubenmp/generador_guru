@@ -3,7 +3,7 @@ Programa para generar todas las palabras en español dada una lista de letras (s
 La razón principal de la existencia de este programa es que cuando perdía mucho tiempo en un nivel del juego tendía a probar con todas las palabras, y para hacerlo yo que lo haga el ordenador.
 
 # Instalando dependencias
-El paquete necesita el diccionario español, que no viene por defecto en el paquete 'pyenchant', para instalar las dependencias solo tenemos que ejecutar como root el comando:
+El paquete necesita el diccionario español, lo crearemos a partir de los ficheros .aff y .dic, solamente tenemos que ejecutar el comando:
 ``` bash
 make init
 ```
