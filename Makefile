@@ -1,5 +1,9 @@
+DIC_FOLDER=./dic
+
 init:
-		pip install -r requirements.txt 
-		sudo apt-get install myspell-es # Diccionario español
+	./cfg.py
+
+clean: 
+	rm -f $(DIR_FOLDER)/*
 
 .PHONY: init
