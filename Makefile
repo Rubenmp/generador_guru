@@ -6,4 +6,4 @@ init:
 clean: 
 	rm -f $(DIR_FOLDER)/*
 
-.PHONY: init
+.PHONY: init clean
